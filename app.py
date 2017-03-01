@@ -90,6 +90,8 @@ def index():
     global n
     global binary_number
 
+    reset()
+
     if request.method == 'POST':
         n = int(request.form['number'].strip())
         find_num_half_bytes(n)
