@@ -90,9 +90,8 @@ def index():
     global n
     global binary_number
 
-    reset()
-
     if request.method == 'POST':
+        reset()
         n = int(request.form['number'].strip())
         find_num_half_bytes(n)
         biggest_multiple(n)
