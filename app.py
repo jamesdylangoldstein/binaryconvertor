@@ -80,23 +80,28 @@ def convert_to_binary(multiple):
 
     binary_number += half_byte_binary.join(binary_list)
 
-@app.route('/converted', methods=['GET', 'POST'])
-def converted():
+def run_it_all(n):
     global binary_number
-    return render_template('converted.html', binary_number=binary_number)
+    find_num_half_bytes(n)
+    biggest_multiple(n)
+    local_binary = binary_number
+    reset()
+    return local_binary
+
+#@app.route('/converted', methods=['GET', 'POST'])
+#def converted(local_binary):
+#    return render_template('converted.html', local_binary=local_binary)
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
+def index(local_binary):
     global n
     global binary_number
 
     if request.method == 'POST':
-        reset()
         n = int(request.form['number'].strip())
-        find_num_half_bytes(n)
-        biggest_multiple(n)
-        return redirect(url_for('converted'))
-    return render_template('index.html')
+        local_binary = run_it_all(n)
+        return render_template('index.html', local_binary=local_binary)
+    return render_template('index.html', local_binary=local_binary)
 
 if __name__ == '__main__':
     app.run(debug=True)
