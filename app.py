@@ -12,12 +12,13 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 num_half_bytes = 1
-
+num_base = 0
 sum_factorial = 0
 binary_number = ''
+n = 0
 
 def find_num_half_bytes(number):
-    num_base = 0
+    global num_base
     global num_half_bytes
     global sum_factorial
 
@@ -79,6 +80,7 @@ def converted():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    global n
     global binary_number
 
     if request.method == 'POST':
