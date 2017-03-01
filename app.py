@@ -98,8 +98,7 @@ def index():
     if request.method == 'POST':
         try:
             n = int(request.form['number'].strip())
-        except:
-        else:
+        except ValueError:
             n = 0
         local_binary = run_it_all(n)
         return render_template('index.html', local_binary=local_binary)
