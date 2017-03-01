@@ -101,7 +101,8 @@ def index():
         n = int(request.form['number'].strip())
         local_binary = run_it_all(n)
         return render_template('index.html', local_binary=local_binary)
-    return render_template('index.html')
+
+    return render_template('index.html', local_binary = 0)
 
 if __name__ == '__main__':
     app.run(debug=True)
