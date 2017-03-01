@@ -93,7 +93,7 @@ def run_it_all(n):
 #    return render_template('converted.html', local_binary=local_binary)
 
 @app.route('/', methods=['GET', 'POST'])
-def index(local_binary):
+def index():
     global n
     global binary_number
 
