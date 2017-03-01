@@ -17,6 +17,13 @@ sum_factorial = 0
 binary_number = ''
 n = 0
 
+def reset():
+    num_half_bytes = 1
+    num_base = 0
+    sum_factorial = 0
+    binary_number = ''
+    n = 0
+
 def find_num_half_bytes(number):
     global num_base
     global num_half_bytes
@@ -77,6 +84,7 @@ def convert_to_binary(multiple):
 def converted():
     global binary_number
     return render_template('converted.html', binary_number=binary_number)
+    reset()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
