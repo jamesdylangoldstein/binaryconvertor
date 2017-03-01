@@ -97,6 +97,8 @@ def index():
     global n
     global binary_number
 
+    local_binary = ''
+
     if request.method == 'POST':
         n = int(request.form['number'].strip())
         local_binary = run_it_all(n)
