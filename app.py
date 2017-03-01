@@ -18,6 +18,12 @@ binary_number = ''
 n = 0
 
 def reset():
+    global num_half_bytes
+    global num_base
+    global sum_factorial
+    global binary_number
+    global n
+
     num_half_bytes = 1
     num_base = 0
     sum_factorial = 0
