@@ -91,16 +91,16 @@ def run_it_all(n):
     reset()
     return local_binary
 
-#@app.route('/converted', methods=['GET', 'POST'])
-#def converted(local_binary):
-#    return render_template('converted.html', local_binary=local_binary)
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global binary_number
 
     if request.method == 'POST':
-        n = int(request.form['number'].strip())
+        try:
+            n = int(request.form['number'].strip())
+        except:
+        else:
+            n = 0
         local_binary = run_it_all(n)
         return render_template('index.html', local_binary=local_binary)
 
