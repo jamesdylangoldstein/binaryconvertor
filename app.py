@@ -15,20 +15,17 @@ num_half_bytes = 1
 num_base = 0
 sum_factorial = 0
 binary_number = ''
-n = 0
 
 def reset():
     global num_half_bytes
     global num_base
     global sum_factorial
     global binary_number
-    global n
 
     num_half_bytes = 1
     num_base = 0
     sum_factorial = 0
     binary_number = ''
-    n = 0
 
 def find_num_half_bytes(number):
     global num_base
@@ -100,7 +97,6 @@ def run_it_all(n):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    global n
     global binary_number
 
     if request.method == 'POST':
