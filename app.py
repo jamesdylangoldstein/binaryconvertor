@@ -84,7 +84,6 @@ def convert_to_binary(multiple):
 def converted():
     global binary_number
     return render_template('converted.html', binary_number=binary_number)
-    reset()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
